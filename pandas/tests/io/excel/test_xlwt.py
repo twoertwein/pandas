@@ -68,7 +68,8 @@ def test_write_append_mode_raises(ext):
 
     with tm.ensure_clean(ext) as f:
         with pytest.raises(ValueError, match=msg):
-            ExcelWriter(f, engine="xlwt", mode="a")
+            with ExcelWriter(f, engine="xlwt", mode="a"):
+                pass
 
 
 def test_to_excel_xlwt_warning(ext):

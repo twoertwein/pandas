@@ -446,3 +446,13 @@ def test_codecs_encoding(encoding, format):
             else:
                 df = pd.read_json(handle)
     tm.assert_frame_equal(expected, df)
+
+
+def test_resource_warnings():
+    msg = '[ResourceWarning("unclosed file *)]'
+    with tm.ensure_clean("_resource_test") as path:
+        with pytest.raises(AssertionError, match=msg):
+            with td.check_file_leaks():
+                handle = open(path)
+        # prevent the auto fixture from throwing an AssertionError
+        handle.close()

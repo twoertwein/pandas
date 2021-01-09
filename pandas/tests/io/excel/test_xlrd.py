@@ -59,7 +59,8 @@ def test_excel_file_warning_with_xlsx_file(datapath):
             raise_on_extra_warnings=False,
             match="The xlrd engine is no longer maintained",
         ):
-            ExcelFile(path, engine=None)
+            with ExcelFile(path, engine=None):
+                pass
     else:
         with tm.assert_produces_warning(None):
             pd.read_excel(path, "Sheet1", engine=None)

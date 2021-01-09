@@ -280,7 +280,7 @@ psycopg2                  2.7                PostgreSQL engine for sqlalchemy
 pyarrow                   0.15.0             Parquet, ORC, and feather reading / writing
 pymysql                   0.8.1              MySQL engine for sqlalchemy
 pyreadstat                                   SPSS files (.sav) reading
-pyxlsb                    1.0.6              Reading for xlsb files
+pyxlsb                    1.0.8              Reading for xlsb files
 qtpy                                         Clipboard I/O
 s3fs                      0.4.0              Amazon S3 access
 tabulate                  0.8.7              Printing in Markdown-friendly format (see `tabulate`_)

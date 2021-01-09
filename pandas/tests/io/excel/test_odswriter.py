@@ -14,4 +14,5 @@ def test_write_append_mode_raises(ext):
 
     with tm.ensure_clean(ext) as f:
         with pytest.raises(ValueError, match=msg):
-            ExcelWriter(f, engine="odf", mode="a")
+            with ExcelWriter(f, engine="odf", mode="a"):
+                pass
